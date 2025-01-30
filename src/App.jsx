@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [task, setTask] = useState([]);
@@ -16,24 +17,32 @@ function App() {
   };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>To Do List</h1>
-      <input
-        type="text"
-        placeholder="Add a new task"
-        value={newTask}
-        onChange={(e) => setNewTask(e.target.value)}
-      />
-      <button onClick={addTask}>Add Task</button>
-      <ul style={{ listStyle: "none", padding: 0 }}>
+    <div className="container mt-5 text-center">
+      <h1 className="mb-4 text-primary">To Do List</h1>
+      <div className="input-group mb-3">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Add a new task"
+          value={newTask}
+          onChange={(e) => setNewTask(e.target.value)}
+        />
+        <button className="btn btn-success" onClick={addTask}>
+          Add Task
+        </button>
+      </div>
+      <ul className="list-group">
         {task.map((task, index) => (
-          <li key={index} style={{ margin: "10px 0" }}>
+          <li
+            key={index}
+            className="list-group-item d-flex justify-content-between align-items-center"
+          >
             {task}{" "}
             <button
               onClick={() => removeTask(index)}
-              style={{ marginLeft: "10px" }}
+              className="btn btn-danger btn-sm"
             >
-              Remove Task
+              ❌
             </button>
           </li>
         ))}
