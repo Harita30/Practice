@@ -1,42 +1,84 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Apply gradient background to cover the entire viewport */
+body {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Smooth fade-in effect for tasks */
+.list-group-item {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeIn 0.5s ease-in-out forwards;
 }
 
-@keyframes logo-spin {
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply slide-in animation only to newly added tasks */
+.list-group-item.new-task {
+  animation: slideIn 0.3s ease-in-out;
+}
+
+@keyframes slideIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateX(-20px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Completed task effect */
+.completed {
+  text-decoration: line-through;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
 }
 
-.card {
-  padding: 2em;
+/* Hover effect for completed tasks */
+.completed:hover {
+  opacity: 1;
+  color: black;
 }
 
-.read-the-docs {
-  color: #888;
+/* Button hover effect */
+.btn-success,
+.btn-danger {
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn-success:hover,
+.btn-danger:hover {
+  transform: scale(1.05);
+}
+
+/* Input field glowing effect */
+.form-control:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Smooth transition for task list */
+.list-group {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Centering the container */
+.container {
+  max-width: 500px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
