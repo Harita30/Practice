@@ -3,7 +3,7 @@ import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import "./App.css"; // Ensure styles are applied
 
-const API_URL = "http://localhost:5001/api/tasks"; // Backend API URL
+const API_URL = "https://todoapp-g3nr.onrender.com/api/tasks"; // Use the deployed backend URL; // Backend API URL
 
 function App() {
   const [tasks, setTasks] = useState([]);
