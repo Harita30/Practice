@@ -66,12 +66,12 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-green-400 text-white p-6">
-      <div className="bg-white text-black rounded-lg shadow-lg p-6 w-full max-w-lg">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-green-400 p-6">
+      <div className="bg-white bg-opacity-90 text-black rounded-lg shadow-lg p-6 w-full max-w-lg">
         <h1 className="text-3xl font-bold text-center text-blue-600 mb-4">
           To Do List
         </h1>
-
+        To Do List
         {/* Input Field */}
         <div className="flex gap-3 mb-4">
           <input
@@ -88,7 +88,6 @@ function App() {
             Add Task
           </button>
         </div>
-
         {/* Task List */}
         <ul className="space-y-2">
           <AnimatePresence>

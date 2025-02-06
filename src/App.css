@@ -9,11 +9,6 @@ body {
 }
 
 /* Smooth fade-in effect for tasks */
-.list-group-item {
-  opacity: 0;
-  transform: translateY(-10px);
-  animation: fadeIn 0.5s ease-in-out forwards;
-}
 
 @keyframes fadeIn {
   to {
@@ -75,10 +70,22 @@ body {
 }
 
 /* Centering the container */
+/* Ensure a transparent background */
 .container {
-  max-width: 500px;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background: transparent !important;
+}
+
+/* Fix input and button background */
+.input-group input, 
+.input-group button {
+  background: rgba(0, 0, 0, 0.2); /* Subtle transparent effect */
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Ensure the task list is also properly visible */
+.list-group-item {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  padding: 10px;
 }
