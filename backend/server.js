@@ -3,18 +3,15 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
-// Initialize Express app
 const app = express();
-app.use(express.json()); // Middleware to parse JSON
-app.use(cors()); // Enable CORS
+app.use(express.json());
+app.use(cors());
 
-// Connect to MongoDB
 mongoose
   .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log("✅ MongoDB Connected"))
-  .catch((err) => console.error("❌ MongoDB Connection Error:", err));
+  .then(() => console.log("MongoDB Connected"))
+  .catch((err) => console.error("MongoDB Connection Error:", err));
 
-// Define Task Schema & Model
 const taskSchema = new mongoose.Schema({
   text: String,
   completed: Boolean,
@@ -22,9 +19,6 @@ const taskSchema = new mongoose.Schema({
 
 const Task = mongoose.model("Task", taskSchema);
 
-// Routes
-
-// GET all tasks
 app.get("/api/tasks", async (req, res) => {
   const tasks = await Task.find();
   res.json(tasks);
@@ -57,7 +51,5 @@ app.put("/api/tasks/:id", async (req, res) => {
     }
   });
   
-
-// Start server
 const PORT = process.env.PORT || 5001;
-app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
