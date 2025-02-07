@@ -1,11 +1,11 @@
-# 📝 Full-Stack To-Do App
+# Full-Stack To-Do App
 
 A **modern, full-stack To-Do application** built with **React (Vite)**, **Node.js**, **Express**, and **MongoDB (Atlas)**. This project showcases **real-world full-stack development** skills, including:
 
-✅ **REST API Integration** – Fully functional backend with MongoDB  
-✅ **State Management** – Seamless task updates using React & Axios  
-✅ **Animations** – Smooth UI interactions with Framer Motion  
-✅ **Full Deployment** – Hosted frontend on **GitHub Pages**, backend on **Render**
+**REST API Integration** – Fully functional backend with MongoDB  
+**State Management** – Seamless task updates using React & Axios  
+**Animations** – Smooth UI interactions with Framer Motion  
+**Full Deployment** – Hosted frontend on **GitHub Pages**, backend on **Render**
 
 ---
 
