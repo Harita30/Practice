@@ -1,4 +1,4 @@
-# 📝 Full-Stack To-Do App 🚀
+# 📝 Full-Stack To-Do App
 
 A **modern, full-stack To-Do application** built with **React (Vite)**, **Node.js**, **Express**, and **MongoDB (Atlas)**. This project showcases **real-world full-stack development** skills, including:
 
@@ -9,17 +9,17 @@ A **modern, full-stack To-Do application** built with **React (Vite)**, **Node.j
 
 ---
 
-## 🌟 Features
+## Features
 
-- 📌 **Add, Complete, Delete Tasks** with a **dynamic UI**
-- ⚡ **Framer Motion animations** for a sleek user experience
-- 🛠️ **Express.js REST API** with MongoDB Atlas for persistent storage
-- 🌍 **Live Deployment**: Accessible from anywhere
-- 🎨 **Modern UI** – Styled with **Tailwind CSS** & **custom CSS**
+- **Add, Complete, Delete Tasks** with a **dynamic UI**
+- **Framer Motion animations** for a sleek user experience
+- **Express.js REST API** with MongoDB Atlas for persistent storage
+- **Live Deployment**: Accessible from anywhere
+- **Modern UI** – Styled with **Tailwind CSS** & **custom CSS**
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Frontend      | Backend    | Database      | Deployment              |
 | ------------- | ---------- | ------------- | ----------------------- |
@@ -29,16 +29,16 @@ A **modern, full-stack To-Do application** built with **React (Vite)**, **Node.j
 
 ---
 
-## 🚀 Live Demo
+## Live Demo
 
 - **Frontend:** [GitHub Pages Link](https://harita30.github.io/ToDo-Fullstack/)
 - **Backend API:** [Render Deployment](https://todoapp-g3nr.onrender.com/api/tasks)
 
 ---
 
-## 🔧 Setup & Installation
+## Setup & Installation
 
-### 1️⃣ Clone the Repository
+### Clone the Repository
 
 ```sh
 git clone https://github.com/Harita30/ToDo-Fullstack.git
