@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
-import "./App.css"; // Ensure styles are applied
+import "./App.css";
 
-const API_URL = "https://todoapp-g3nr.onrender.com/api/tasks"; // Use the deployed backend URL
+const API_URL = "https://todoapp-g3nr.onrender.com/api/tasks";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -17,21 +17,20 @@ function App() {
       .catch((error) => console.error("Error fetching tasks:", error));
   }, []);
 
-  // Add task with animation
+  // Add taskn
   const addTask = () => {
     if (!newTask.trim()) return;
     axios
       .post(API_URL, { text: newTask, completed: false })
       .then((response) => {
-        setTasks([...tasks, { ...response.data, isNew: true }]); // Add "isNew" flag
+        setTasks([...tasks, { ...response.data, isNew: true }]);
         setNewTask("");
 
-        // Remove "isNew" flag after animation
         setTimeout(() => {
           setTasks((prevTasks) =>
             prevTasks.map((task) => ({ ...task, isNew: false }))
           );
-        }, 300); // Animation duration
+        }, 300);
       })
       .catch((error) => console.error("Error adding task:", error));
   };
@@ -39,7 +38,7 @@ function App() {
   // Toggle task completion
   const toggleCompletion = (id) => {
     const updatedTask = tasks.find((task) => task._id === id);
-    if (!updatedTask) return; // Ensure task exists
+    if (!updatedTask) return;
 
     axios
       .put(`${API_URL}/${id}`, {
@@ -57,7 +56,7 @@ function App() {
       .catch((error) => console.error("Error updating task:", error));
   };
 
-  // Delete task with exit animation
+  // Delete task
   const removeTask = (id) => {
     axios
       .delete(`${API_URL}/${id}`)
@@ -72,7 +71,6 @@ function App() {
           To Do List
         </h1>
 
-        {/* Input Field */}
         <div className="flex gap-3 mb-4">
           <input
             type="text"
@@ -89,7 +87,6 @@ function App() {
           </button>
         </div>
 
-        {/* Task List */}
         <ul className="space-y-2">
           <AnimatePresence>
             {tasks.map((task) => (
@@ -107,7 +104,7 @@ function App() {
                 {task.text}
                 <button
                   onClick={(e) => {
-                    e.stopPropagation(); // Prevent click from triggering toggle
+                    e.stopPropagation();
                     removeTask(task._id);
                   }}
                   className="text-red-600 hover:text-red-800 transition"
