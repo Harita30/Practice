@@ -1,4 +1,4 @@
-/* Ensure full viewport background */
+
 body {
   background: linear-gradient(to right, #4facfe, #00f2fe);
   font-family: 'Arial', sans-serif;
@@ -8,16 +8,14 @@ body {
   align-items: center;
 }
 
-/* Style for the main container */
 .container {
-  background: rgba(255, 255, 255, 0.1) !important; /* Ensures transparency */
-  backdrop-filter: blur(10px); /* Soft blur effect */
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px);
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Input & Button Styling */
 .input-group input, 
 .input-group button {
   background: rgba(255, 255, 255, 0.3) !important;
@@ -26,7 +24,6 @@ body {
   padding: 10px;
 }
 
-/* Task List Styling */
 .list-group-item {
   background: rgba(255, 255, 255, 0.7);
   border-radius: 8px;
@@ -34,20 +31,17 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-/* Completed Task */
 .completed {
   text-decoration: line-through;
   opacity: 0.7;
   transition: opacity 0.3s ease-in-out;
 }
 
-/* Hover effect for completed tasks */
 .completed:hover {
   opacity: 1;
   color: black;
 }
 
-/* Button hover effect */
 .btn-success,
 .btn-danger {
   transition: transform 0.2s ease-in-out;
