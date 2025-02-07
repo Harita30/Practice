@@ -1,4 +1,4 @@
-/* Apply gradient background to cover the entire viewport */
+/* Ensure full viewport background */
 body {
   background: linear-gradient(to right, #4facfe, #00f2fe);
   font-family: 'Arial', sans-serif;
@@ -8,32 +8,33 @@ body {
   align-items: center;
 }
 
-/* Smooth fade-in effect for tasks */
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Style for the main container */
+.container {
+  background: rgba(255, 255, 255, 0.1) !important; /* Ensures transparency */
+  backdrop-filter: blur(10px); /* Soft blur effect */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Apply slide-in animation only to newly added tasks */
-.list-group-item.new-task {
-  animation: slideIn 0.3s ease-in-out;
+/* Input & Button Styling */
+.input-group input, 
+.input-group button {
+  background: rgba(255, 255, 255, 0.3) !important;
+  color: black !important;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 10px;
 }
 
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+/* Task List Styling */
+.list-group-item {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
 }
 
-/* Completed task effect */
+/* Completed Task */
 .completed {
   text-decoration: line-through;
   opacity: 0.7;
@@ -55,37 +56,4 @@ body {
 .btn-success:hover,
 .btn-danger:hover {
   transform: scale(1.05);
-}
-
-/* Input field glowing effect */
-.form-control:focus {
-  border-color: #4CAF50;
-  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
-  transition: box-shadow 0.3s ease-in-out;
-}
-
-/* Smooth transition for task list */
-.list-group {
-  transition: all 0.3s ease-in-out;
-}
-
-/* Centering the container */
-/* Ensure a transparent background */
-.container {
-  background: transparent !important;
-}
-
-/* Fix input and button background */
-.input-group input, 
-.input-group button {
-  background: rgba(0, 0, 0, 0.2); /* Subtle transparent effect */
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-/* Ensure the task list is also properly visible */
-.list-group-item {
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 8px;
-  padding: 10px;
 }

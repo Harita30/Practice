@@ -3,7 +3,7 @@ import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import "./App.css"; // Ensure styles are applied
 
-const API_URL = "https://todoapp-g3nr.onrender.com/api/tasks"; // Use the deployed backend URL; // Backend API URL
+const API_URL = "https://todoapp-g3nr.onrender.com/api/tasks"; // Use the deployed backend URL
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -67,27 +67,28 @@ function App() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-green-400 p-6">
-      <div className="bg-white bg-opacity-90 text-black rounded-lg shadow-lg p-6 w-full max-w-lg">
-        <h1 className="text-3xl font-bold text-center text-blue-600 mb-4">
+      <div className="container text-black rounded-lg shadow-lg p-6 w-full max-w-lg">
+        <h1 className="text-3xl font-bold text-center text-black mb-4">
           To Do List
         </h1>
-        To Do List
+
         {/* Input Field */}
         <div className="flex gap-3 mb-4">
           <input
             type="text"
-            className="flex-grow border border-gray-300 p-3 rounded-lg text-lg"
+            className="flex-grow border border-gray-300 p-3 rounded-lg text-lg placeholder-gray-600 text-black bg-transparent"
             placeholder="Add a new task..."
             value={newTask}
             onChange={(e) => setNewTask(e.target.value)}
           />
           <button
             onClick={addTask}
-            className="bg-green-600 hover:bg-green-700 text-white px-4 py-3 rounded-lg transition"
+            className="bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-lg transition"
           >
             Add Task
           </button>
         </div>
+
         {/* Task List */}
         <ul className="space-y-2">
           <AnimatePresence>
